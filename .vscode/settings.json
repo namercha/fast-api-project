@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
+        "createposts",
         "fastapi"
-    ]
+    ],
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true
 }
