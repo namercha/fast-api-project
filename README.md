@@ -25,3 +25,20 @@ Functionality:
 - Like posts
 - Update posts
 - User specific tasks (creating users, logging in, voting on posts)
+
+
+### Postgres table
+```
+CREATE TABLE public.posts
+(
+    id serial,
+    title character varying NOT NULL,
+    content character varying NOT NULL,
+    published boolean NOT NULL DEFAULT True,
+    created_at timestamp with time zone NOT NULL DEFAULT now(),
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE IF EXISTS public.posts
+    OWNER to postgres;
+```
