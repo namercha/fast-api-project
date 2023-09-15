@@ -27,7 +27,7 @@ Functionality:
 - User specific tasks (creating users, logging in, voting on posts)
 
 
-### Postgres table
+### Postgres table in SQL but the ORM takes care of this for us
 ```
 CREATE TABLE public.posts
 (
@@ -42,3 +42,10 @@ CREATE TABLE public.posts
 ALTER TABLE IF EXISTS public.posts
     OWNER to postgres;
 ```
+
+### JWT Token Authentiation
+1. `/login`, user provides email and password
+2. Ensure the provided information is correct
+3. Generate a JWT token and send back in payload
+4. User accesses `/posts`, providing the JWT in the header
+5. API verifies the token is valid and returns the data requested
